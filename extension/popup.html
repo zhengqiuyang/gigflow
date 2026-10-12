@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  body { width: 340px; font-family: system-ui, sans-serif; margin: 0; padding: 14px; color: #1f2430; }
+  h1 { font-size: 14px; margin: 0 0 10px; }
+  .card { border: 1px solid #e0e3ea; border-radius: 10px; padding: 10px; font-size: 12.5px; line-height: 1.5; }
+  .title { font-weight: 700; margin-bottom: 6px; }
+  .snippet { color: #5b6472; max-height: 90px; overflow: hidden; }
+  .flags { margin-top: 8px; }
+  .flag { display: inline-block; background: #fdeaea; color: #c53030; border-radius: 5px; padding: 1px 6px; margin: 2px 2px 0 0; font-size: 11px; }
+  .budget { color: #2fa96c; font-weight: 600; margin-top: 6px; }
+  button { margin-top: 10px; width: 100%; border: none; background: #4b6bff; color: #fff; border-radius: 8px; padding: 8px; font-size: 13px; cursor: pointer; }
+  button.copied { background: #2fa96c; }
+  .err { color: #c53030; font-size: 12px; padding: 8px 0; }
+  .note { font-size: 10.5px; color: #8a93a3; margin-top: 8px; }
+</style>
+</head>
+<body>
+<h1>gigflow capture</h1>
+<div id="status" class="err"></div>
+<div id="card" class="card" style="display:none">
+  <div class="title" id="title"></div>
+  <div class="snippet" id="snippet"></div>
+  <div class="budget" id="budget"></div>
+  <div class="flags" id="flags"></div>
+</div>
+<button id="copyBtn" style="display:none">复制职位卡 JSON</button>
+<p class="note">只读取你正在看的这个页面。不发请求、不存数据、不上传。</p>
+<script type="module" src="popup.js"></script>
+</body>
+</html>

@@ -14,8 +14,16 @@
 
 ```bash
 npm run demo    # 端到端：职位卡 → proposal 草稿 → 反套话 lint 闸门 → 合同 → 发票 → 催款模拟
-npm test        # 15 个测试
+npm test        # 19 个测试
 ```
+
+## Chrome 扩展（capture 层）
+
+`extension/` 目录，Chrome →「加载已解压的扩展程序」即可。打开任意 Upwork 职位页，点扩展图标：
+标题/描述/预算/客户花费自动解析，红旗（unlimited revisions 之类）标红，一键复制职位卡 JSON。
+
+**合规姿态**：只读你正在浏览的页面 DOM，无后台抓取、无跨页请求、无数据上传。
+`extension/jobcard.js` 是 `src/jobcard.js` 的受控副本，CI 防漂移检查强制两者一致。
 
 确定性核心（解析/lint/合同/催款节奏）零依赖可测；LLM 草稿在 Web 层替换 `draftProposal` 即可。
 

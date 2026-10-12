@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "gigflow capture",
+  "version": "0.1.0",
+  "description": "Turn the Upwork job page you're viewing into a structured job card — client-side only, no scraping backend.",
+  "permissions": ["activeTab", "clipboardWrite"],
+  "action": { "default_popup": "popup.html" },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.upwork.com/nx/search/jobs/*",
+        "https://www.upwork.com/jobs/*",
+        "https://www.upwork.com/browse/jobs/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
